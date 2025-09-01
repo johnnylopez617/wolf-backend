@@ -46,8 +46,19 @@ class ProductionConfig(Config):
     SECURITY_CONFIRMABLE = True
     MAIL_SUPPRESS_SEND = False
 
+class TestingConfig(Config):
+    TESTING = True
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    WTF_CSRF_ENABLED = False
+    SECURITY_PASSWORD_SALT = 'test-salt'
+    SECURITY_REGISTERABLE = True
+    SECURITY_SEND_REGISTER_EMAIL = False
+    MAIL_SUPPRESS_SEND = True
+
 config = {
     'development': DevelopmentConfig,
     'production': ProductionConfig,
+    'testing': TestingConfig,
     'default': DevelopmentConfig
 }
