@@ -155,8 +155,6 @@ Desktop.ini
 *.sqlite
 *.sqlite3
 
-# Migration files
-migrations/
 
 # Logs
 *.log
